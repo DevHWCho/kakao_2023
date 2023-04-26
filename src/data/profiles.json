@@ -1,0 +1,61 @@
+[
+  {
+    "id": "1",
+    "name": "민지",
+    "photo": "https://cdn.topstarnews.net/news/photo/202208/14723067_935718_3329_org.jpg",
+    "comment": "뉴진스 맏언니 민지입니다.",
+    "background": "https://storage.googleapis.com/cdn.media.bluedot.so/bluedot.zenerate/2023/01/tx5de3_230102-NewJeans-OMG-Melon-Photos-documents-1.jpeg",
+    "email": "minji@gmail.com",
+    "chatbg": "https://cdn.pixabay.com/photo/2021/08/18/19/18/background-6556379_960_720.jpg"
+  },
+  {
+    "id": "2",
+    "name": "하니",
+    "photo": "https://post-phinf.pstatic.net/MjAyMzAxMjlfOSAg/MDAxNjc0OTk3MTE0NTQ2.0dhRQe9_1Ra-SlFY53STzoMhdUFPnfzoldcicrCZXj8g.wigJCNH0OHp9aiq7VzvnRu-ApgQ102s22_dWgsS-GJog.JPEG/IMG_2735.jpg?type=w1200",
+    "comment": "뉴진스 메인 보컬 하니입니다.",
+    "background": "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FxcSmY%2FbtrNNY0Aij0%2FSycX7nQ5aDjXameMjBbQCk%2Fimg.jpg",
+    "email": "hani@gmail.com",
+    "chatbg": "https://cdn.pixabay.com/photo/2021/08/18/19/23/background-6556394_960_720.jpg"
+  },
+  {
+    "id": "3",
+    "name": "해린",
+    "photo": "https://d2u3dcdbebyaiu.cloudfront.net/uploads/atch_img/656/5c5402204790db0992961b77fc98aae1_res.jpeg",
+    "comment": "뉴진스 고양이 해린입니다.",
+    "background": "https://edgio.clien.net/F01/13174997/2fdb6acdb5ecb3.jpg",
+    "email": "haerin@gmail.com",
+    "chatbg": "https://cdn.pixabay.com/photo/2016/06/29/16/46/abstract-1487263_960_720.jpg"
+  },
+  {
+    "id": "4",
+    "name": "다니엘",
+    "photo": "http://file3.instiz.net/data/cached_img/upload/2022/07/31/21/06187ad3b03659922f12a5f69b97c3cd.jpg",
+    "comment": "뉴진스 미소천사 다니엘입니다.",
+    "background": "https://d2u3dcdbebyaiu.cloudfront.net/uploads/atch_img/211/99099eefeccb16c618fa566fefda03f8.jpeg",
+    "email": "daniel@gmail.com"
+  },
+  {
+    "id": "5",
+    "name": "혜인",
+    "photo": "https://pbs.twimg.com/media/FYcPOh7VEAAYYnT?format=jpg&name=medium",
+    "comment": "뉴진스 막내 혜인입니다.",
+    "background": "https://spnimage.edaily.co.kr/images/photo/files/NP/S/2022/07/PS22072700076.jpg",
+    "email": "hyein@gmail.com"
+  },
+  {
+    "id": "6",
+    "name": "Bred",
+    "photo": "https://cdn.pixabay.com/photo/2016/11/29/01/34/man-1866572_960_720.jpg",
+    "comment": "carpe diem",
+    "background": "https://cdn.pixabay.com/photo/2022/11/07/20/23/new-york-7577186_960_720.jpg",
+    "email": "bred@gmail.com"
+  },
+  {
+    "id": "7",
+    "name": "Chris",
+    "photo": "https://cdn.pixabay.com/photo/2016/11/29/04/54/photographer-1867417_960_720.jpg",
+    "comment": "photographer",
+    "background": "https://cdn.pixabay.com/photo/2022/12/07/23/28/way-7642285_960_720.jpg",
+    "email": "chris@gmail.com"
+  }
+]

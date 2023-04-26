@@ -1,0 +1,151 @@
+.authContainer {
+  position: relative;
+  height: 100vh;
+  .login_header {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    font-size: 50px;
+    font-family: 'Dongle', sans-serif;
+    color: #fff;
+    transform: translateX(-50%);
+    h1 {
+      position: relative;
+      width: 240px; 
+      height: 120px;
+      background: #3F4E4F;
+      border-radius: 50%;
+      font-weight: bold;
+      text-align: center;
+      line-height: 130px;
+      letter-spacing: -1px;
+      &::before {z-index: -1; position: absolute; bottom: 5px; left: 70px; width: 50px; height: 50px; border-radius: 8px; background-color: #3F4E4F; content: ''; transform: rotate(-65deg) skew(60deg);}
+      &::after {position: absolute; content: '';}
+    }
+  }
+
+  .aContainer {
+    position: absolute;
+    display: block;
+    top: 380px;
+    left: 50%;
+    width: 300px;
+    transform: translateX(-50%);
+  }
+  .authInput {
+    width: 300px;
+    font-family: 'Nanum Gothic', sans-serif;
+    box-sizing: border-box;
+  }
+  .emailInput {
+    height: 45px;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    border-radius: 3px 3px 0 0;
+    font-size: 14px;
+    &::placeholder {
+      padding-left: 10px;
+      color: #ccc;
+    }
+  }
+  .pwInput {
+    height: 45px;
+    border: 1px solid #ccc;
+    border-top: 1px solid #eee;
+    border-radius: 0 0 3px 3px;
+    font-size: 14px;
+    &::placeholder {
+      padding-left: 10px;
+      color: #ccc;
+    }
+  }
+  .authSubmit {
+    position: absolute;
+    display: block;
+    left: 50%;
+    width: 300px;
+    height: 45px;
+    margin-top: 10px;
+    border: 1px solid #555;
+    border-radius: 3px;
+    background-color: #E86A33;
+    font-size: 14px;
+    font-family: 'Nanum Gothic', sans-serif;
+    color: #333;
+    transform: translateX(-50%);
+    cursor: pointer;
+    &:hover {
+      background-color: #F45050;
+    }
+  }
+  .authSwitchBg {
+    z-index: 0;
+    position: absolute;
+    top: 530px;
+    left: 50%;
+    width: 140px;
+    height: 50px;
+    font-size: 14px;
+    font-family: 'Nanum Gothic', sans-serif;
+    color: #666;
+    text-align: center;
+    line-height: 50px;
+    transform: translateX(-50%);
+    cursor: pointer;
+  }
+  .authBtns {
+    position: absolute;
+    top: 600px;
+    left: 50%;
+    width: 440px;
+    padding-top: 20px;
+    border-top: 1px solid #bcbcbc;
+    transform: translateX(-50%);
+  }
+  .googleBtn {
+    width: 200px;
+    height: 50px;
+    margin-right: 20px;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    font-size: 14px;
+    font-family: 'Nanum Gothic', sans-serif;
+    cursor: pointer;
+    .googleLogo {
+      color: #F45050;
+    }
+  }
+  .githubBtn {
+    width: 200px;
+    height: 50px;
+    margin-left: 20px;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    font-size: 14px;
+    font-family: 'Nanum Gothic', sans-serif;
+    cursor: pointer;
+    .githubLogo {
+      color: #892CDC;
+    }
+  }
+}
+
+// .backContainer {
+//   display: flex;
+//   .backColor {
+//     width: 25%;
+//     height: 100vh;
+//   }
+//   .bg1 {
+//     background-color: #E86A33;
+//   }
+//   .bg2 {
+//     background-color: #263A29;
+//   }
+//   .bg3 {
+//     background-color: #41644A;
+//   }
+//   .bg4 {
+//     background-color: #F2E3DB;
+//   }
+// }

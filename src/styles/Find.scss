@@ -1,0 +1,62 @@
+// Find.scss
+@import url(Common.scss);
+$kakaoColor: #513736;
+$borderColor: #ebebeb;
+$fontColor: #A27B5C;
+$signatureColor: #E86A33;
+
+.find_method {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 80px;
+  background: #eee;
+  li {
+    overflow: hidden;
+    flex: 1;
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 14px;
+      font-family: 'Nanum Gothic', sans-serif;
+      color: $kakaoColor;
+      transition: transform 300ms linear 0s;
+      &:hover {
+        transform: scale(1.05);
+      }
+      i {
+        font-size: 22px;
+        margin-top: 5px;
+      }
+    }
+  }
+}
+
+.recommended_section {
+  header {
+    height: 22px;
+    padding: 5px;
+    font-size: 16px;
+    font-family: 'Nanum Gothic', sans-serif;
+    color: $fontColor;
+    line-height: 22px;
+    text-indent: 15px;
+  }
+  ul {
+    li {
+      height: 54px;
+      border-top: 1px solid $borderColor;
+      border-bottom: 1px solid $borderColor;
+      font-size: 16px;
+      font-family: 'Nanum Gothic', sans-serif;
+      color: $fontColor;
+      text-align: center;
+      line-height: 54px;
+    }
+  }
+}
+
+.find_tab .tab_bar > ul > li:nth-child(3) > a {
+  color: $signatureColor;
+}

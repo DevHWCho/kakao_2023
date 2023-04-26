@@ -1,0 +1,39 @@
+// TabBar.scss
+.tab_bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6.4%;
+  min-height: 54px;
+  border-top: 1px solid #c1c1c1;
+  background-color: #f7f7f7;
+  ul {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    border: 0;
+    li {
+      flex: 1;
+      border: 0;
+      text-align: center;
+      transition: transform 500ms linear 0s;
+      &:hover {
+        transform: scale(1.1);
+      }
+      a {
+        display: flex;
+        flex-direction: column;
+        color: #FFA559;
+        font-size: 14px;
+        font-family: 'Noto Sans KR', sans-serif;
+        line-height: 16px;
+        
+        i {
+          display: block;
+          font-size: 22px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+// SearchBox.scss
+@import url(Common.scss);
+
+.search_box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 7.3%;
+  min-height: 53px;
+  background-color: #999B84;
+  .search_inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 95%;
+    height: 50%;
+    background-color: #f1f2f4;
+    border-radius: 5px;
+    i {
+      align-items: center;
+      margin-left: 15px;
+      font-size: 16px;
+      color: #bebcc1;
+      line-height: 32px;
+    }
+    input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      padding: 8px 15px;
+      &::placeholder {
+        font-size: 14px;
+        font-family: 'Nanum Gothic', sans-serif;
+        text-align: center;
+      } 
+    }
+  }
+}
+

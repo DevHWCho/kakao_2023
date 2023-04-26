@@ -1,0 +1,84 @@
+// Chats.scss
+@import url(Common.scss);
+$pointColor: #006E7F;
+$subColor: #F8CB2E;
+$borderColor: none;
+$fontColor: #8e9399;
+// $signatureColor: #ffe84c;
+$signatureColor: #E86A33;
+$contentColor: #A27B5C;
+
+main {
+  height: 85.8%;
+  padding-top: 64px;
+  ul.chat_list {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid $borderColor;
+    li {
+      // border-bottom: 1px solid $borderColor;
+      a {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 14px;
+        font-family: 'Nanum Gothic', sans-serif;
+        align-items: center;
+      }
+    }
+  }
+  .chats_img {
+    width: 50px;
+    height: 50px;
+    margin: 15px;
+    border-radius: 35%;
+    background-size: cover;
+  }
+  
+  .chats_cont {
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .chats_name {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .chats_latest {
+      font-size: 12px;
+      color: $contentColor;
+    }
+  }
+  
+  .chats_time {
+    margin-right: 15px;
+    font-size: 12px;
+    color: $contentColor;
+  }
+}
+
+.chat_fa_btn {
+  position: fixed;
+  right: 20px;
+  bottom: 80px;
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: $subColor;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px #0004;
+    font-size: 18px;
+    color: $pointColor;
+    transition: color 300ms linear 0s, background 300ms linear 0s;
+    &:hover {
+      background: $pointColor;
+      color: $subColor;
+    }
+  }
+}
+
+.chats_tab .tab_bar > ul > li:nth-child(2) > a {
+  color: $signatureColor;
+}

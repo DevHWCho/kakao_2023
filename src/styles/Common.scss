@@ -1,0 +1,38 @@
+// common.scss
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
+//font-family: 'Poor Story', cursive;
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+// font-family: 'Noto Sans KR', sans-serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+// font-family: 'Noto Sans KR', sans-serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
+// font-family: 'Dongle', sans-serif;
+
+body {
+  font-size: 12px;
+  background-color: #DCD7C9;
+}
+a {
+  &:link, &:visited, &:hover, &:focus, &:active {
+    color: #000;
+    text-decoration: none;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+.default {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 10px 15px;
+  border-radius: 35%;
+  background: url(../images/empty.jpg) no-repeat 0 0;
+  background-size: cover;
+}

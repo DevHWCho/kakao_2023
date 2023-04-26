@@ -1,0 +1,35 @@
+// PlusFriends.scss
+@import url(Common.scss);
+
+.plus_friends {
+  height: 280px;
+  border-bottom: 1px solid #EBEBEB;
+  > {
+    header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 16px;
+      padding: 5px 15px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #EBEBEB;
+      > span {
+        color: #8E9399;
+      }
+    }
+    ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      li {
+        display: flex;
+        align-items: center;
+        width: 50%;
+        height: 45px;
+        a > i {
+          margin: 0 15px;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

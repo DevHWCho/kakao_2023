@@ -1,0 +1,141 @@
+// More.scss
+$contentColor: #A27B5C;
+$signatureColor: #E86A33;
+$fontColor: #dcdcdc;
+
+main {
+  height: 85.8%;
+  padding-top: 64px;
+  font-size: 14px;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+.user_info {
+  display: flex;
+  align-items: center;
+  height: 72px;
+  padding-left: 15px;
+  background-color: #999B84;
+  // border-bottom: 1px solid #eee;
+}
+
+.logout {
+  margin-right: 30px;
+  font-size: 25px;
+  color: #D21312;
+  cursor: pointer;
+}
+
+.profile_img {
+  width: 50px;
+  height: 50px;
+  border-radius: 35%;
+  background-size: cover;
+  margin-right: 20px;
+}
+
+.profile_info {
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+
+  .profile_name {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .profile_email {
+    color: $fontColor;
+  }
+}
+
+.chat_img a {
+  font-size: 25px;
+  margin-right: 20px;
+  color: #E86A33;
+  line-height: 25px;
+}
+
+.user_menu {
+  height: 125px;
+  border-bottom: 1px solid #ebebeb;
+
+  > ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+
+    > li {
+      overflow: hidden;
+      flex: 1;
+
+      > a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: $contentColor;
+        font-weight: bold;
+        transition: transform 300ms linear 0s;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+
+        > i {
+          font-size: 30px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+.more_app {
+  padding: 15px;
+
+  > ul {
+    display: flex;
+    flex-direction: row;
+
+    > li {
+      width: 80px;
+
+      > a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        font-size: 12px;
+        text-align: center;
+      }
+    }
+  }
+
+  li {
+    span.app_icon {
+      display: block;
+      width: 44px;
+      height: 44px;
+      margin-bottom: 10px;
+      background: url(../images/empty.jpg) 0 0 no-repeat;
+      background-size: cover;
+    }
+
+    &:nth-child(1) .app_icon {
+      background-image: url(../images/kakaostory.png);
+    }
+
+    &:nth-child(2) .app_icon {
+      background-image: url(../images/path.png);
+    }
+
+    &:nth-child(3) .app_icon {
+      background-image: url(../images/kakaofriends.png);
+    }
+  }
+}
+
+.more_tab .tab_bar > ul > li:nth-child(4) > a {
+  color: $signatureColor;
+}

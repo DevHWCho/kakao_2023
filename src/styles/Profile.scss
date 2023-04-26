@@ -1,0 +1,103 @@
+// Profile.scss
+@import url(Common.scss);
+
+.prof_header {
+  position: relative;
+}
+.prof_header > .header {
+  z-index: 999;
+  position: absolute;
+  top: 0; left: 0;
+  background: transparent;
+  .title_bar > .left_item > a {
+    opacity: 1;
+    font-size: 20px;
+  }
+}
+
+.prof_main {
+  height: calc(100vh - 64px);
+  .kbackground {
+    position: absolute;
+    top: 0;
+    width: calc(100vw - calc(100vw - 100%));
+    height: 60%;
+    background: url(../images/bg_default.png) no-repeat 50% 50%;
+    background-size: cover;
+  }
+  
+  .kprofile {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 57%;
+    width: 100%;
+
+    .kprofile_img {
+      position: absolute;
+      top: -65px;
+      left: 50%;
+      width: 100px;
+      height: 100px;
+      margin-left: -50px;
+      background-size: cover;
+    }
+    
+    .kprofile_cont {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+      padding-top: 10px;
+
+
+      .kprofile_name {
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      input.kprofile_email {
+        width: 160px;
+        height: 24px;
+        margin: 10px 0 20px;
+        padding: 0 5px;
+        border: none;
+        background: transparent;
+        font-size: 16px;
+        font-family: 'Nanum Gothic', sans-serif;
+        text-align: center;
+      }
+
+      .kprofile_menu {
+        display: flex; flex-direction: row;
+      
+        li {
+          margin: 0 6px;
+      
+          a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 12px;
+            font-weight: bold;
+            span {
+              display: block;
+              width: 52px;
+              height: 52px;
+              margin-bottom: 5px;
+              border-radius: 35%;
+              background-color: #BA90C6;
+              color: #FDF4F5;
+              font-size: 20px;
+              line-height: 60px;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
