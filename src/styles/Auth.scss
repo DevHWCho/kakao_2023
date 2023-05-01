@@ -24,6 +24,15 @@
     }
   }
 
+  // input 자동입력 색상 제거
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+  transition: background-color 5000s;
+  -webkit-text-fill-color: #333 !important;
+  }
+
   .aContainer {
     position: absolute;
     display: block;
@@ -34,31 +43,73 @@
   }
   .authInput {
     width: 300px;
+    padding-left: 20px;
     font-family: 'Nanum Gothic', sans-serif;
     box-sizing: border-box;
   }
   .emailInput {
+    position: relative;
     height: 45px;
     border: 1px solid #ccc;
     border-bottom: none;
     border-radius: 3px 3px 0 0;
     font-size: 14px;
+    outline: 0;
+    &.on {
+      border: 2px solid #47B5FF;
+    }
     &::placeholder {
-      padding-left: 10px;
       color: #ccc;
     }
   }
+  .email_error {
+    display: none;
+    position: absolute;
+    top: 15px;
+    left: 90px;
+    color: #ff0000;
+  }
+
+  .email_container {
+    &.error {
+      .email_error {
+        display: block;
+      }
+    }
+  }
+
   .pwInput {
+    position: relative;
     height: 45px;
     border: 1px solid #ccc;
     border-top: 1px solid #eee;
     border-radius: 0 0 3px 3px;
     font-size: 14px;
+    outline: 0;
+    &.on {
+      border: 2px solid #47B5FF;
+    }
     &::placeholder {
-      padding-left: 10px;
       color: #ccc;
     }
   }
+
+  .pw_error {
+        display: none;
+        position: absolute;
+        bottom: 15px;
+        left: 90px;
+        color: #ff0000;
+       }
+
+  .pw_container {
+    &.error {
+      .pw_error {
+        display: block;
+       }
+     }
+    }
+
   .authSubmit {
     position: absolute;
     display: block;
@@ -66,6 +117,7 @@
     width: 300px;
     height: 45px;
     margin-top: 10px;
+    padding-left: 0;
     border: 1px solid #555;
     border-radius: 3px;
     background-color: #E86A33;
