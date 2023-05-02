@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { FaBars, FaChevronLeft, FaMicrophone, FaSearch, FaSmile } from 'react-icons/fa';
+import { FaBars, FaChevronLeft, FaImage, FaMicrophone, FaSearch, FaSmile, FaTimes } from 'react-icons/fa';
 import { Link, useLocation} from 'react-router-dom';
 import Header from '../components/Header';
-import axios from 'axios';
+// import axios from 'axios';
 import Talks from 'components/Talks';
 import { addDoc, collection, onSnapshot, orderBy, query} from 'firebase/firestore';
 import { db, storage } from 'fireB';
@@ -12,19 +12,13 @@ import '../styles/Chatting.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Chatting(props) {
-  // console.log("userObj>>>",{userObj})
   const location = useLocation();
-  // console.log("pppppppp>>",location)
-  // // console.log("location>>>",location)
   const link = location.pathname
 
   const {
     userObj,
     profId, profName, profPhoto, profEmail, profBack 
   } = props;
-
-  // console.log("PPP<<", userObj)
-
 
   // 헤더용
   const state = {title: profName, number: "", leftItem: <FaChevronLeft /> , rightItem: <><FaSearch /> <FaBars /></>, link: "/chats"}
@@ -51,7 +45,6 @@ function Chatting(props) {
           newArray.push({...doc.data(), id:doc.id}); 
         });
         setTalks(newArray);
-        // console.log(newArray)
         if (newArray && newArray.length > 0 && newArray[0].attachmentUrl) {
           setNewAttachment(newArray[0].attachmentUrl);
         }
@@ -78,12 +71,11 @@ function Chatting(props) {
         creatorId: userObj.uid, 
         attachmentUrl
       });
-      // console.log("Document written with ID: ", docRef.id);
     } catch (e) {
-      // console.error("Error adding document: ", e);
     }
     setTalk("");
     setAttachment("");
+    onFooterClose();
   }
 
   const onChange = e => {
@@ -93,15 +85,12 @@ function Chatting(props) {
   }
 
   const onFilechange = (e) => {
-    // console.log("e->",e)
     const {target: {files}} = e;
     
     const theFile = files[0];
-    // console.log('theFile->', theFile); 
     
     const reader = new FileReader(); 
     reader.onloadend = (finishedEvent) => {
-      // console.log("finishedEvent->",finishedEvent)
       const {currentTarget: {result}} = finishedEvent 
       setAttachment(result);
     }
@@ -114,8 +103,7 @@ function Chatting(props) {
 
   // 채팅 입력하면 맨 아래로 스크롤 이동
   const messageEndRef = useRef(null);
-  // console.log("ref>>>>>>>", messageEndRef);
-
+  
   const scrollToBottom = () => {
     messageEndRef.current.scrollIntoView({behavior: 'smooth'});
   }
@@ -123,6 +111,18 @@ function Chatting(props) {
   useEffect(() => {
     scrollToBottom()
   },[talks]);
+
+  const footer = document.querySelector('footer')
+  const plus_btn = document.querySelector('.plus_icon');
+  const onFooterClick = () => {
+    footer.classList.add('on')
+    plus_btn.style.opacity = '0';
+  }
+  const onFooterClose = () => {
+    footer.classList.remove('on')
+    plus_btn.style.opacity = '1';
+    setAttachment(""); 
+  }
   
   return (
   <div>
@@ -155,15 +155,27 @@ function Chatting(props) {
       ))}
     </main>
     <footer>
-      <div>
-        <input type='file' accept='image/*' onChange={onFilechange} id='img-attach' style={{display:`none`}}/>
-        <label htmlFor='img-attach' className='plus_btn'>
-          <FontAwesomeIcon icon="fa-solid fa-plus" />
-        </label>
-      </div>
       <form action="/" method="post" onSubmit={onSubmit}>
       <fieldset className="text_box">
         <legend className="blind">채팅 입력창</legend>
+        <div>
+        <input type='file' accept='image/*' onChange={onFilechange} id='img-attach' style={{display:`none`}}/>
+        <div className='plus_btn'>
+          <FontAwesomeIcon icon="fa-solid fa-plus" className='plus_icon' onClick={onFooterClick} />
+          <FaTimes className='x_btn' onClick={onFooterClose} />
+        </div>
+        <>
+        <label htmlFor='img-attach' className='image-attach'>
+          {attachment ? (
+            <div className='attach_temp'>
+              <img src={attachment} alt='temp_image'/>
+            </div>
+          ) : (
+            <FaImage style={{cursor:'pointer'}} />
+          )}
+        </label>
+        </>
+        </div>
         <label htmlFor="chatting" className="blind">채팅 입력</label>
         <input type="text" id="chatting" className="text_field" onChange={onChange} value={talk}/>
         <button type='submit' className='send_btn'>보내기</button>

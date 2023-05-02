@@ -79,15 +79,15 @@ function Talks(props) {
               <>
                 <h4>{text}</h4>
                 {attachmentUrl && (// 이렇게 설정하면 이미지 없이 내용만 넣어도 엑박이 안 뜸
-                  <img src={attachmentUrl} width="50" height="50" alt='' />
+                  <img src={attachmentUrl} max-width="350" max-height="400" alt='send_image' />
                 )}
                 <span className='chat_time' >{nowDate}</span>
                 <div className='talks__actions'>
                   <span onClick={onDeleteClick}>
-                    <FontAwesomeIcon icon='fa-solid fa-trash' />
+                    <FontAwesomeIcon icon='fa-solid fa-trash' style={{color:'#ef3333'}} />
                   </span>
                   <span onClick={toggleEditing}>
-                    <FontAwesomeIcon icon='fa-solid fa-pencil' />
+                    <FontAwesomeIcon icon='fa-solid fa-pencil' style={{color:'#555'}} />
                   </span>
                 </div>
               </>
