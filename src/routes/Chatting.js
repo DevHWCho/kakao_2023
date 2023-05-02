@@ -14,39 +14,34 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function Chatting(props) {
   // console.log("userObj>>>",{userObj})
   const location = useLocation();
-  console.log("pppppppp>>",location)
+  // console.log("pppppppp>>",location)
   // // console.log("location>>>",location)
-  // const name = location.state.name
-  // const photo = location.state.photo
-  // const background = location.state.background
-  // const email = location.state.email
   const link = location.pathname
-  // const id = location.state.id;
 
   const {
     userObj,
     profId, profName, profPhoto, profEmail, profBack 
   } = props;
 
-  console.log("PPP<<", profId)
+  // console.log("PPP<<", userObj)
 
 
   // 헤더용
   const state = {title: profName, number: "", leftItem: <FaChevronLeft /> , rightItem: <><FaSearch /> <FaBars /></>, link: "/chats"}
   
-  fetch('https://jsonplaceholder.typicode.com/posts')
-  .then((response) => response.json())
-  .then((json) => console.log(json));
+  // fetch('https://jsonplaceholder.typicode.com/posts')
+  // .then((response) => response.json())
+  // .then((json) => console.log(json));
 
   
-    const [posts, setPosts] = useState([]);
+    // const [posts, setPosts] = useState([]);
     const [talks, setTalks] = useState([]);
 
     useEffect(() => {
-      axios.get('https://jsonplaceholder.typicode.com/posts')
-        .then(response => {
-          setPosts(response.data);
-        });
+      // axios.get('https://jsonplaceholder.typicode.com/posts')
+      //   .then(response => {
+      //     setPosts(response.data);
+      //   });
 
       const q = query(collection(db, `talks${profId}`), 
                          orderBy("createdAt","asc"));
@@ -56,7 +51,7 @@ function Chatting(props) {
           newArray.push({...doc.data(), id:doc.id}); 
         });
         setTalks(newArray);
-        console.log(newArray)
+        // console.log(newArray)
         if (newArray && newArray.length > 0 && newArray[0].attachmentUrl) {
           setNewAttachment(newArray[0].attachmentUrl);
         }
@@ -83,9 +78,9 @@ function Chatting(props) {
         creatorId: userObj.uid, 
         attachmentUrl
       });
-      console.log("Document written with ID: ", docRef.id);
+      // console.log("Document written with ID: ", docRef.id);
     } catch (e) {
-      console.error("Error adding document: ", e);
+      // console.error("Error adding document: ", e);
     }
     setTalk("");
     setAttachment("");
@@ -98,15 +93,15 @@ function Chatting(props) {
   }
 
   const onFilechange = (e) => {
-    console.log("e->",e)
+    // console.log("e->",e)
     const {target: {files}} = e;
     
     const theFile = files[0];
-    console.log('theFile->', theFile); 
+    // console.log('theFile->', theFile); 
     
     const reader = new FileReader(); 
     reader.onloadend = (finishedEvent) => {
-      console.log("finishedEvent->",finishedEvent)
+      // console.log("finishedEvent->",finishedEvent)
       const {currentTarget: {result}} = finishedEvent 
       setAttachment(result);
     }
@@ -119,7 +114,7 @@ function Chatting(props) {
 
   // 채팅 입력하면 맨 아래로 스크롤 이동
   const messageEndRef = useRef(null);
-  console.log("ref>>>>>>>", messageEndRef);
+  // console.log("ref>>>>>>>", messageEndRef);
 
   const scrollToBottom = () => {
     messageEndRef.current.scrollIntoView({behavior: 'smooth'});
@@ -147,17 +142,16 @@ function Chatting(props) {
           <span className="profile_img empty" style={{backgroundImage: `url("${profPhoto}")`}}></span>
         </Link>
         <span className="profile_name">{profName}</span>
-        {posts.map(post => 
+        {/* {posts.map(post => 
            <span key={post.id} className="chat">{post.title}</span>
-        )}
+        )} */}
+        <span className='chat'>안녕하세요!</span>
         <span className="chat_time"><span>17</span>:<span>33</span></span>
       </div>
       {talks.map(talk => (
-        <div className='chat_box my'>
-          <span className='chat'>
-            <Talks key={talk.id} talkObj={talk} isOwner={talk.creatorId === userObj.uid} state={profId} />
-          </span>
-        </div>
+        <>
+          <Talks key={talk.id} talkObj={talk} isOwner={talk.creatorId === userObj.uid} state={profId} />
+        </>
       ))}
     </main>
     <footer>

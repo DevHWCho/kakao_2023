@@ -9,7 +9,7 @@ import React, { useEffect, useState } from 'react'
 
 function Talks(props) {
   // const location = useLocation();
-  console.log("lll>>>>>>", props);
+  // console.log("lll>>>>>>", props);
   // const {
   //   state: {
   //     id: chatId
@@ -22,7 +22,7 @@ function Talks(props) {
     }, 
     isOwner} = props; //객체로 들어온 props를 구조분해할당으로 가져옴. const {} = props; / {속성: {}} 안에 추가로 내용을 나누어서 내보낼 수 있음
 
-    console.log("TTTT", id)
+    // console.log("TTTT", id)
   const [editing, setEditing] = useState(false);
   const [newTalk, setNewTalk] = useState(text);
   const [nowDate, setNowDate] = useState(createdAt);
@@ -63,36 +63,41 @@ function Talks(props) {
   },[])
 
   return (
-    <div className='talks'>
-      {editing ? (
-        <>
-          <form onSubmit={onSubmit} className='container talksEdit'>
-            <input type='text' onChange={onChange} value={newTalk} required className='formInput' />
-            <input type='submit' value='수정하기' className='formBtn' />
-          </form>
-          <button onClick={toggleEditing} className='formBtn cancelBtn'>취소</button>
-        </>
+    <>
+      {isOwner ? (
+        <div className='chat_box my'>
+          <div className='chat'>
+            {editing ? (
+              <>
+                <form onSubmit={onSubmit} className='container talksEdit'>
+                  <input type='text' onChange={onChange} value={newTalk} required className='formInput' />
+                  <input type='submit' value='수정하기' className='formBtn' />
+                </form>
+                <button onClick={toggleEditing} className='formBtn cancelBtn'>취소</button>
+              </>
+             ) : (
+              <>
+                <h4>{text}</h4>
+                {attachmentUrl && (// 이렇게 설정하면 이미지 없이 내용만 넣어도 엑박이 안 뜸
+                  <img src={attachmentUrl} width="50" height="50" alt='' />
+                )}
+                <span className='chat_time' >{nowDate}</span>
+                <div className='talks__actions'>
+                  <span onClick={onDeleteClick}>
+                    <FontAwesomeIcon icon='fa-solid fa-trash' />
+                  </span>
+                  <span onClick={toggleEditing}>
+                    <FontAwesomeIcon icon='fa-solid fa-pencil' />
+                  </span>
+                </div>
+              </>
+             )}
+          </div>
+        </div>
       ) : (
-        <>
-          <h4>{text}</h4>
-          {attachmentUrl && (// 이렇게 설정하면 이미지 없이 내용만 넣어도 엑박이 안 뜸
-            <img src={attachmentUrl} width="50" height="50" alt='' />
-          )}
-          <span className='chat_time' >{nowDate}</span>
-          {isOwner && (// true일 경우에만 아래 내용들이 보이게 된다. 내가 쓴 글.
-            <div className='talks__actions'>
-              <span onClick={onDeleteClick}>
-                <FontAwesomeIcon icon='fa-solid fa-trash' />
-              </span>
-              <span onClick={toggleEditing}>
-                <FontAwesomeIcon icon='fa-solid fa-pencil' />
-              </span>
-            </div>
-          )}
-        </>
+        <div className='chat_box my' style={{display:'none'}}></div>
       )}
-
-    </div>
+    </>
   )
 }
 

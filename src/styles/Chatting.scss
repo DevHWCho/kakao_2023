@@ -96,6 +96,16 @@ main.chatting {
     font-family: 'Nanum Gothic', sans-serif;
   }
 
+  .talks {
+    position: relative;
+    font-size: 14px; 
+    line-height: 1; 
+    margin: 5px; 
+    padding: 10px 5px; 
+    border-radius: 5px; 
+    background-color: #ffe73a;
+  }
+
   .talks__actions {
     position: absolute;
     top: 5px;

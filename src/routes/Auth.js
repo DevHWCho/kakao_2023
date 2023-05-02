@@ -25,12 +25,6 @@ function Auth() {
 
   return (
     <div className='authContainer'>
-      <section className='backContainer'>
-        <div className='backColor bg1'></div>
-        <div className='backColor bg2'></div>
-        <div className='backColor bg3'></div>
-        <div className='backColor bg4'></div>
-      </section>
       <header className='login_header'>
         <h1>
           MESSENGER
