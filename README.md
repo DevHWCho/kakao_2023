@@ -1,4 +1,4 @@
-# 메신져 반응형 웹앱
+# 메신져 반응형 웹앱 (KakaoTalk Clone & Renewal)
 # # 제작목표
 ● React와 Firebase를 통해 메신져 형태의 CRUD 가능한 어플리케이션 제작<br/>
 # # 주요기술
